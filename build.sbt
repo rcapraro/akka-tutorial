@@ -6,9 +6,9 @@ lazy val root = (project in file("."))
   .settings(
     name := "akka-tutorial",
     libraryDependencies ++= Seq(
-      "com.typesafe.akka" % "akka-actor-typed_2.13" % "2.6.17",
-      "com.typesafe.akka" % "akka-stream-typed_2.13" % "2.6.17",
-      "com.typesafe.akka" % "akka-http_2.13" % "10.2.6",
-      "com.typesafe.akka" % "akka-http-spray-json_2.13" % "10.2.6"
+      ("com.typesafe.akka" % "akka-actor-typed" % "2.6.17").cross(CrossVersion.for3Use2_13),
+      ("com.typesafe.akka" % "akka-stream-typed" % "2.6.17").cross(CrossVersion.for3Use2_13),
+      ("com.typesafe.akka" % "akka-http" % "10.2.6").cross(CrossVersion.for3Use2_13),
+      ("com.typesafe.akka" % "akka-http-spray-json" % "10.2.6").cross(CrossVersion.for3Use2_13)
     )
   )
